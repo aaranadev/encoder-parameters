@@ -1,0 +1,5 @@
+/build/
+/lib/
+/config/
+/dist/
+/test/unit/coverage/
