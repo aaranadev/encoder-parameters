@@ -16,7 +16,7 @@ export default [
 		plugins: [
       babel({
         exclude: 'node_modules/**',
-        runtimeHelpers: true
+        // runtimeHelpers: true
       }),
 			resolve(), // so Rollup can find `ms`
 			commonjs() // so Rollup can convert `ms` to an ES module
