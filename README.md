@@ -16,3 +16,49 @@
     </div>
   </body>
 </html>
+
+## Installation
+
+If you are using yarn
+```sh
+yarn add @albertoarana/encoder-parameters
+```
+
+or npm
+```sh
+npm install @albertoarana/encoder-parameters --save
+```
+
+## Use
+### Without serialize
+
+```js
+import encoderParameters from '@albertoarana/encoder-parameters';
+
+const params = {
+  name: 'Alberto',
+  lastname: 'Arana'
+};
+
+encoderParameters(params);
+// ouput: ?name=Alberto&lastname=Arana
+```
+
+### With serialize
+
+```js
+import encoderParameters from '@albertoarana/encoder-parameters';
+
+const serialize = {
+  name: 'filterName',
+  lastname: 'filterLastName'
+};
+
+const params = {
+  name: 'Alberto',
+  lastname: 'Arana'
+};
+
+encoderParameters(params, serialize);
+// ouput: ?filterName=Alberto&filterLastName=Arana
+```
