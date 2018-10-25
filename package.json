@@ -1,5 +1,5 @@
 {
-  "name": "encoder-parameters",
+  "name": "@albertoarana/encoder-parameters",
   "version": "1.0.0",
   "description": " A encoder parameters function to transform data in params format",
   "main": "dist/encoder-parameters.js",
