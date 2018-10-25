@@ -25,5 +25,5 @@ export default function encoderParameters (data = {}, serialize) {
 
   params = params.slice(0, -1);
 
-  return params;
+  return encodeURI(params);
 }
