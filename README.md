@@ -62,3 +62,18 @@ const params = {
 encoderParameters(params, serialize);
 // ouput: ?filterName=Alberto&filterLastName=Arana
 ```
+
+## Important
+
+Currently Set or Map elements are not supported directly. For use these elements it is necessary transform their values into an array.
+
+```js
+const map = new Map();
+
+map.set(1, 1);
+map.set(2, 2);
+
+const params = {
+  map: [...map.values()]
+}
+```

@@ -15,7 +15,7 @@ export default function encoderParameters (data = {}, serialize) {
     const key = (serialize && serialize[index]) || index;
 
     if (value) {
-      params += `${key}=${value}`;
+      params += `${key}=${getValueTransformed(value)}`;
     }
 
     params += '&';
@@ -26,4 +26,13 @@ export default function encoderParameters (data = {}, serialize) {
   params = params.slice(0, -1);
 
   return encodeURI(params);
+}
+
+function getValueTransformed (value) {
+  console.log(typeof value)
+  if (typeof value === 'object') {
+    return JSON.stringify(value);
+  }
+
+  return value;
 }
