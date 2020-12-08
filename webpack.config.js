@@ -21,7 +21,6 @@ const sharedConfig = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        test: /\.js$/,
         exclude: /node_modules/,
       },
     ],
