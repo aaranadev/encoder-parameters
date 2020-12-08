@@ -6,7 +6,7 @@
  * @param {*} [serialize] - Serialize to convert keys into output keys [optional]
  * @returns
  */
-export default function encoderParameters (data = {}, serialize) {
+export default function encoderParameters(data = {}, serialize) {
   let params = '?';
 
   Object.entries(data).map((values) => {
@@ -21,14 +21,14 @@ export default function encoderParameters (data = {}, serialize) {
     params += '&';
 
     return params;
-  })
+  });
 
   params = params.slice(0, -1);
 
   return encodeURI(params);
 }
 
-function getValueTransformed (value) {
+function getValueTransformed(value) {
   if (typeof value === 'object') {
     return JSON.stringify(value);
   }

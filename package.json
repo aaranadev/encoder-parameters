@@ -1,10 +1,9 @@
 {
   "name": "@albertoarana/encoder-parameters",
-  "version": "1.0.4",
-  "description": " A encoder parameters function to transform data in params format",
+  "version": "2.0.0",
+  "description": "A encoder parameters function to transform data in params format",
   "main": "dist/encoder-parameters.js",
-  "module": "dist/encoder-parameters.esm.js",
-  "browser": "dist/encoder-parameters.umd.js",
+  "module": "src/index.js",
   "files": [
     "dist"
   ],
@@ -22,29 +21,25 @@
   },
   "homepage": "https://github.com/albertoarana/encoder-parameters#readme",
   "devDependencies": {
-    "@babel/core": "7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-decorators": "^7.1.2",
-    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-    "@babel/plugin-proposal-function-sent": "^7.1.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/plugin-transform-runtime": "7.1.0",
-    "@babel/preset-env": "7.1.0",
-    "istanbul": "^0.4.5",
-    "rollup": "0.66.6",
-    "rollup-plugin-babel": "4.0.3",
-    "rollup-plugin-commonjs": "9.2.0",
-    "rollup-plugin-node-resolve": "3.4.0"
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+    "@babel/plugin-proposal-numeric-separator": "^7.12.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-transform-flow-strip-types": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/runtime": "^7.12.5",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "prettier": "^2.2.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build",
-    "prepublishOnly": "npm install && npm run build"
+    "start": "webpack --env=development",
+    "build": "webpack --env=production",
+    "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\""
   }
 }
