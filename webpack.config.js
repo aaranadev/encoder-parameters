@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 
 const sharedConfig = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'encode-parameter.js',
@@ -19,20 +19,21 @@ const sharedConfig = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         test: /\.js$/,
-        include: path.resolve(__dirname, './src'),
-        exclude: /(node_modules)/,
-        use: 'babel-loader',
+        exclude: /node_modules/,
       },
     ],
   },
   resolve: {
     symlinks: false,
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
 }
 
 const developmentConfig = {
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   cache: true,
   output: {
     pathinfo: true
